@@ -112,9 +112,7 @@ ORDER BY nom;
 
 --17. Liste des resserres classées de la plus grande à la plus petite : nom de resserre et nom du village. (3 lignes)
 
-SELECT nom_resserre, num_village FROM resserre	 ORDER BY num_resserre DESC; 
-Ou bien 
-SELECT nom_resserre, nom_village FROM resserre INNER JOIN village ON village.num_village = resserre.num_village ORDER BY num_resserre DESC
+SELECT nom_resserre, nom_village FROM resserre INNER JOIN village ON village.num_village = resserre.num_village ORDER BY superficie DESC
 
 --18. Nombre d'habitants du village numéro 5. (Reponse = 4)
 

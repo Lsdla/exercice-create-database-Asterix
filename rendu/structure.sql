@@ -101,3 +101,5 @@ CREATE TABLE fabriquer (
     CONSTRAINT FOREIGN KEY (num_potion) REFERENCES potion(num_potion)
 )ENGINE INNODB; 
 
+ALTER TABLE fabriquer ADD INDEX (num_potion);
+
