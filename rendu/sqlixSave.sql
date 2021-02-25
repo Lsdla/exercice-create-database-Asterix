@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.32, for osx10.12 (x86_64)
 --
--- Host: localhost    Database: sqliX
+-- Host: localhost    Database: sqlix
 -- ------------------------------------------------------
 -- Server version	5.7.32
 
@@ -14,14 +14,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Current Database: `sqliX`
---
-
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `sqliX` /*!40100 DEFAULT CHARACTER SET utf8 */;
-
-USE `sqliX`;
 
 --
 -- Table structure for table `absorber`
@@ -90,6 +82,7 @@ CREATE TABLE `fabriquer` (
   `num_hab` int(11) NOT NULL,
   PRIMARY KEY (`num_potion`,`num_hab`),
   KEY `num_hab` (`num_hab`),
+  KEY `num_potion` (`num_potion`),
   CONSTRAINT `fabriquer_ibfk_1` FOREIGN KEY (`num_hab`) REFERENCES `habitant` (`num_hab`),
   CONSTRAINT `fabriquer_ibfk_2` FOREIGN KEY (`num_potion`) REFERENCES `potion` (`num_potion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -299,6 +292,10 @@ LOCK TABLES `village` WRITE;
 INSERT INTO `village` VALUES (1,'Aquilona',52,1),(2,'Lutèce',25,2),(3,'Aginum',33,3),(4,'Calendes Aquae',42,2),(5,'Condate',38,1),(6,'Gergovie',55,3),(7,'Aquae Calidae',35,2);
 /*!40000 ALTER TABLE `village` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'sqlix'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -309,4 +306,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-02-22 12:55:11
+-- Dump completed on 2021-02-25 22:51:26

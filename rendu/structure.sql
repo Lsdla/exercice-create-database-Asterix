@@ -1,21 +1,21 @@
 --créate databases: 
 
-CREATE database sqliX;
-USE sqliX;
+CREATE database sqlix;
+USE sqlix;
 
 -- Créate tables: 
 -- au cas ou une table existe et pour etre sur d'eviter les doublons prendre l'habitude de drop;
 
--- DROP TABLE IF EXISTS province;
--- DROP TABLE IF EXISTS village; 
--- DROP TABLE IF EXISTS resserre;
--- DROP TABLE IF EXISTS categorie; 
--- DROP TABLE IF EXISTS trophee; 
--- DROP TABLE IF EXISTS habitant;
--- DROP TABLE IF EXISTS qualite;
--- DROP TABLE IF EXISTS absorber;
--- DROP TABLE IF EXISTS fabriquer;
--- DROP TABLE IF EXISTS potion;
+DROP TABLE IF EXISTS province;
+DROP TABLE IF EXISTS village; 
+DROP TABLE IF EXISTS resserre;
+DROP TABLE IF EXISTS categorie; 
+DROP TABLE IF EXISTS trophee; 
+DROP TABLE IF EXISTS habitant;
+DROP TABLE IF EXISTS qualite;
+DROP TABLE IF EXISTS absorber;
+DROP TABLE IF EXISTS fabriquer;
+DROP TABLE IF EXISTS potion;
 
 CREATE TABLE province  (
   num_province INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
