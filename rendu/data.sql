@@ -54,7 +54,7 @@ VALUES
 ("Bellodalix", 32, 4, 7), 
 ("Cétyounix",	32,	4,	4), 
 ("Homéopatix",	48,	5,	6), 
-("Obélix",	38,	6,	1)
+("Obélix",	38,	6,	1),
 ("Plantaquatix", 30, 5, 5), 
 ("Moralélastix",67,	1,	2), 
 ("Pneumatix",	26,	7,	1), 
