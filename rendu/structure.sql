@@ -99,7 +99,7 @@ CREATE TABLE fabriquer (
     PRIMARY KEY (num_potion , num_hab),
     CONSTRAINT FOREIGN KEY (num_hab) REFERENCES habitant(num_hab),
     CONSTRAINT FOREIGN KEY (num_potion) REFERENCES potion(num_potion)
-)ENGINE INNODB; 
+)ENGINE=INNODB; 
 
 ALTER TABLE fabriquer ADD INDEX (num_potion);
 
