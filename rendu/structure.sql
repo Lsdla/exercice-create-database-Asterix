@@ -23,6 +23,17 @@ CREATE TABLE province  (
   nom_gouverneur VARCHAR(30) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB;
 
+CREATE TABLE categorie  (
+  code_cat CHAR (3) PRIMARY KEY NOT NULL,
+  nom_categ VARCHAR(50),
+  nb_points INT
+) ENGINE=InnoDB ;
+
+CREATE TABLE qualite  (
+  num_qualite INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  lib_qualite VARCHAR(30)
+) ENGINE=InnoDB;
+
 CREATE TABLE village  (
   num_village INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   nom_village VARCHAR(30) NOT NULL DEFAULT '',
@@ -40,7 +51,15 @@ CREATE TABLE resserre (
   CONSTRAINT FOREIGN KEY (num_village) REFERENCES village (num_village)
 ) ENGINE=InnoDB;
 
-
+CREATE TABLE habitant (
+  num_hab INT PRIMARY KEY  NOT NULL AUTO_INCREMENT,
+  nom VARCHAR(30),
+  age INT,
+  num_qualite INT,
+  num_village INT,
+  CONSTRAINT FOREIGN KEY (num_qualite) REFERENCES qualite (num_qualite),
+  CONSTRAINT FOREIGN KEY (num_village) REFERENCES village (num_village)
+) ENGINE=InnoDB;
 
 CREATE TABLE trophee  (
   num_trophee INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -53,28 +72,12 @@ CREATE TABLE trophee  (
   CONSTRAINT FOREIGN KEY (code_cat) REFERENCES categorie (code_cat)
 ) ENGINE=InnoDB ;
 
-
-CREATE TABLE categorie  (
-  code_cat CHAR (3) PRIMARY KEY NOT NULL,
-  nom_categ VARCHAR(50),
-  nb_points INT
+CREATE TABLE potion (
+  num_potion INT PRIMARY KEY AUTO_INCREMENT,
+  lib_potion VARCHAR(40),
+  formule VARCHAR(30),
+  constituant_principal VARCHAR(30)
 ) ENGINE=InnoDB ;
-
-CREATE TABLE habitant (
-  num_hab INT PRIMARY KEY  NOT NULL AUTO_INCREMENT,
-  nom VARCHAR(30),
-  age INT,
-  num_qualite INT,
-  num_village INT,
-  CONSTRAINT FOREIGN KEY (num_qualite) REFERENCES qualite (num_qualite),
-  CONSTRAINT FOREIGN KEY (num_village) REFERENCES village (num_village)
-) ENGINE=InnoDB;
-
-
-CREATE TABLE qualite  (
-  num_qualite INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  lib_qualite VARCHAR(30)
-) ENGINE=InnoDB;
 
 CREATE TABLE absorber  (
   num_potion INT NOT NULL,
@@ -86,12 +89,6 @@ CREATE TABLE absorber  (
   CONSTRAINT FOREIGN KEY (num_hab) REFERENCES habitant (num_hab)
 ) ENGINE=InnoDB;
 
-CREATE TABLE potion (
-  num_potion INT PRIMARY KEY AUTO_INCREMENT,
-  lib_potion VARCHAR(40),
-  formule VARCHAR(30),
-  constituant_principal VARCHAR(30)
-) ENGINE=InnoDB ;
 
 CREATE TABLE fabriquer (
     num_potion INT NOT NULL ,
