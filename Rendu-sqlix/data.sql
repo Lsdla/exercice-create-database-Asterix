@@ -1,9 +1,15 @@
+-- on respectant l'ordre des créations des tables on fait les inserts: 
+
 -- Insertion de Données :
 
-Insert Into province (nom_province, nom_gouverneur) 
+
+INSERT INTO province (nom_province, nom_gouverneur) 
+
 VALUES ("Armorique","Garovirus"),
 ("Averne","Nenpeuplus"),
 ("Aquitaine","Yenapus");
+
+
 
 INSERT INTO categorie (code_cat, nom_categ, nb_points)
 VALUES ("BCN",	"Bouclier de Centurion",	6),
@@ -39,6 +45,8 @@ VALUES ("Albinus",	720,	4),
 ("Vercingetorix",	500,	6),
 ("Sintrof",	895,	1);
 
+
+
 INSERT INTO habitant (nom, age, num_qualite, num_village) 
 VALUES 
 ("Abraracourcix", 65, 1, 1), 
@@ -64,6 +72,8 @@ VALUES
 ("Gélatine",	65,	NULL,	6), 
 ("Fanzine", 21,	NULL,	3);
 
+
+
 INSERT INTO trophee (date_prise, code_cat, num_preneur, num_resserre)
 VALUES 
 ("2052-04-03 00:00:00",	"BLE",	7,	3),
@@ -83,6 +93,8 @@ VALUES ("Potion magique n°1" ,	NULL,	"Gui"),
 ("Potion magique n°3",	"2C1B",	"Calva"), 
 ("Potion Zen",	NULL,	"Jus de Betterave"), 
 ("Potion Anti Douleur", "5C3J1T",	"Calva");
+
+
 
 INSERT INTO absorber (num_potion, date_a, num_hab, quantite)
 VALUES (1,"2052-02-18 00:00:00",7,3),
@@ -116,6 +128,8 @@ VALUES (1,"2052-02-18 00:00:00",7,3),
 (2,"2052-11-26 00:00:00",8,2),
 (5,"2052-11-26 00:00:00",13,2),
 (5,"2052-11-26 00:00:00",16,2);
+
+
 
 INSERT INTO fabriquer (num_potion, num_hab)
 VALUES (1,4),
